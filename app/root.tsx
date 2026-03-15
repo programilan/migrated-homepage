@@ -9,19 +9,18 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import "./css/styles-v2.scss";
 
-export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-];
+import { links } from "./links";
+import ThemeProvider from "@rescui/ui-contexts/lib/theme-provider";
+export { links };
+
+import data from "app/data/releases.json";
+
+import Header from "./components/ktl-component/header";
+import Footer from "./components/ktl-component/footer";
+import "@jetbrains/kotlin-web-site-ui/dist/header.css";
+import "@jetbrains/kotlin-web-site-ui/dist/footer.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,6 +28,35 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        {/* icons */}
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/assets/images/favicon.svg"
+        />
+        <link rel="alternate icon" href="./assets/images/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          href="/assets/images/apple-touch-icon.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/assets/images/apple-touch-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/assets/images/apple-touch-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/assets/images/apple-touch-icon-144x144.png"
+        />
+
         <Meta />
         <Links />
       </head>
@@ -42,7 +70,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ThemeProvider theme="dark">
+      <Header
+        productWebUrl={data.latest.url}
+        hasSearch={false}
+        dropdownTheme="dark"
+        currentUrl="/docs"
+        onSearchClick={() => {}}
+      />
+      <Outlet />
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
