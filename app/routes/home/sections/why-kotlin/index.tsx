@@ -7,7 +7,7 @@ import cn from "classnames";
 
 import { Container, Section } from "app/components/layout";
 
-import multiplatformImg from "/assets/images/index/multiplatform.svg";
+import multiplatformImg from "@assets/images/index/multiplatform.svg";
 
 import { ProgrammingLanguage } from "./section/programming-language/index";
 

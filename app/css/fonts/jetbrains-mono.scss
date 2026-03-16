@@ -9,9 +9,8 @@
     local("JetBrainsMonodev-Regular"),
     local("JetBrains Mono Regular"),
     local("JetBrainsMono-Regular"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2")
-      format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Regular.woff") format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -24,9 +23,8 @@
     local("JetBrainsMonodev-Italic"),
     local("JetBrains Mono Italic"),
     local("JetBrainsMono-Italic"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2")
-      format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Italic.woff") format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -39,9 +37,8 @@
     local("JetBrainsMonodev-Medium"),
     local("JetBrains Mono Medium"),
     local("JetBrainsMono-Medium"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Medium.woff2")
-      format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Medium.woff") format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Medium.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -54,10 +51,9 @@
     local("JetBrainsMonodev-Medium-Italic"),
     local("JetBrains Mono Medium Italic"),
     local("JetBrainsMono-Medium-Italic"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.woff2")
+    url("/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.woff2")
       format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.woff")
-      format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -70,8 +66,8 @@
     local("JetBrainsMonodev-Bold"),
     local("JetBrains Mono Bold"),
     local("JetBrainsMono-Bold"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Bold.woff") format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Bold.woff") format("woff");
 }
 
 @font-face {
@@ -84,10 +80,8 @@
     local("JetBrainsMonodev-Bold-Italic"),
     local("JetBrains Mono Bold Italic"),
     local("JetBrainsMono-Bold-Italic"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.woff2")
-      format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.woff")
-      format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.woff") format("woff");
 }
 
 @font-face {
@@ -100,10 +94,8 @@
     local("JetBrainsMonodev-ExtraBold"),
     local("JetBrains Mono ExtraBold"),
     local("JetBrainsMono-ExtraBold"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2")
-      format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff")
-      format("woff");
+    url("/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff2") format("woff2"),
+    url("/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.woff") format("woff");
 }
 
 @font-face {
@@ -116,8 +108,8 @@
     local("JetBrainsMonodev-ExtraBold-Italic"),
     local("JetBrains Mono ExtraBold Italic"),
     local("JetBrainsMono-ExtraBold-Italic"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff2")
+    url("/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff2")
       format("woff2"),
-    url("/assets/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff")
+    url("/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff")
       format("woff");
 }

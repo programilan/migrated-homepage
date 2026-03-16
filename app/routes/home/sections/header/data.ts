@@ -1,7 +1,7 @@
-import serverSideImg from "/assets/images/good-for/server-side.svg";
-import mobileImg from "/assets/images/good-for/mobile.svg";
-import androidImg from "/assets/images/good-for/android.svg";
-import webImg from "/assets/images/good-for/web.svg";
+import serverSideImg from "@assets/images/good-for/server-side.svg";
+import mobileImg from "@assets/images/good-for/mobile.svg";
+import androidImg from "@assets/images/good-for/android.svg";
+import webImg from "@assets/images/good-for/web.svg";
 
 export const cardsData = [
   {

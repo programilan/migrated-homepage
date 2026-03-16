@@ -1,9 +1,9 @@
-import gradleLogo from "/assets/images/companies/gradle.svg";
-import cordaLogo from "/assets/images/companies/corda.svg";
-import evernoteLogo from "/assets/images/companies/evernote.svg";
-import courseraLogo from "/assets/images/companies/coursera.svg";
-import springLogo from "/assets/images/companies/spring.svg";
-import atlassianLogo from "/assets/images/companies/atlassian.svg";
+import gradleLogo from "@assets/images/companies/gradle.svg";
+import cordaLogo from "@assets/images/companies/corda.svg";
+import evernoteLogo from "@assets/images/companies/evernote.svg";
+import courseraLogo from "@assets/images/companies/coursera.svg";
+import springLogo from "@assets/images/companies/spring.svg";
+import atlassianLogo from "@assets/images/companies/atlassian.svg";
 
 export const testimonials = [
   {

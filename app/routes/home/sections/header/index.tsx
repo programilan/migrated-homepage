@@ -50,7 +50,7 @@ export function HeaderSection() {
             </div>
 
             <div className="header-section__contributors">
-              <img src="/assets/jetbrains-logo.svg" alt=""></img>
+              <img src="/jetbrains-logo.svg" alt=""></img>
               <p className={textCn("rs-text-2")}>
                 Developed by{" "}
                 <a

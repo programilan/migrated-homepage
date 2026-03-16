@@ -8,19 +8,17 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+
 import "./app.css";
 import "./css/styles-v2.scss";
+import ThemeProvider from "@rescui/ui-contexts/lib/theme-provider";
+import KotlinHeader from "@jetbrains/kotlin-web-site-ui/out/components/header/index.js";
+import KotlinFooter from "@jetbrains/kotlin-web-site-ui/out/components/footer/index.js";
 
 import { links } from "./links";
-import ThemeProvider from "@rescui/ui-contexts/lib/theme-provider";
 export { links };
 
-import data from "app/data/releases.json";
-
-import Header from "./components/ktl-component/header";
-import Footer from "./components/ktl-component/footer";
-import "@jetbrains/kotlin-web-site-ui/dist/header.css";
-import "@jetbrains/kotlin-web-site-ui/dist/footer.css";
+import releases_data from "app/data/releases.json";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -31,30 +29,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
         {/* icons */}
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="/assets/images/favicon.svg"
-        />
-        <link rel="alternate icon" href="./assets/images/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          href="/assets/images/apple-touch-icon.png"
-        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link
           rel="apple-touch-icon"
           sizes="72x72"
-          href="/assets/images/apple-touch-icon-72x72.png"
+          href="/apple-touch-icon-72x72.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="114x114"
-          href="/assets/images/apple-touch-icon-114x114.png"
+          href="/apple-touch-icon-114x114.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="144x144"
-          href="/assets/images/apple-touch-icon-144x144.png"
+          href="/apple-touch-icon-144x144.png"
         />
 
         <Meta />
@@ -72,15 +63,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <ThemeProvider theme="dark">
-      <Header
-        productWebUrl={data.latest.url}
-        hasSearch={false}
+      <KotlinHeader
         dropdownTheme="dark"
-        currentUrl="/docs"
-        onSearchClick={() => {}}
+        productWebUrl={releases_data.latest.url}
+        hasSearch={false}
+        searchConfig={{}}
       />
+
       <Outlet />
-      <Footer />
+
+      <KotlinFooter />
     </ThemeProvider>
   );
 }

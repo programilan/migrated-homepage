@@ -7,6 +7,5 @@ export default [
   // route("docs/multiplatform", "<route_here>"),
   // route("docs/data-science-overview", "<route_here>"),
   // route("lp/server-side", "<route_here>"),
-  // route("multiplatform", "<route_here>"),
   // route("community", "<route_here>"),
 ] satisfies RouteConfig;
