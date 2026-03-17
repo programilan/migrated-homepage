@@ -15,22 +15,16 @@ hljs.registerLanguage("kotlin", kotlin);
 
 export function ProgrammingLanguage() {
   const textCn = useTextStyles();
-  const [highlighted, setHighlighted] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     setActiveIndex(Math.floor(Math.random() * tabs.length));
-  }, []);
+  }, []); // randomization happens only on client so hydration doesn't cause two active indexes
 
-  useEffect(() => {
-    const activeCodeTab = tabs[activeIndex].code;
-
-    const highlighted = hljs.highlight(activeCodeTab, {
-      language: "kotlin",
-    });
-
-    setHighlighted(highlighted.value);
-  }, [activeIndex]);
+  const activeCodeTab = tabs[activeIndex].code;
+  const highlighted = hljs.highlight(activeCodeTab, {
+    language: "kotlin",
+  }).value;
 
   return (
     <div className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
