@@ -27,32 +27,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-        {/* icons */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link
-          rel="apple-touch-icon"
-          sizes="72x72"
-          href="/apple-touch-icon-72x72.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="114x114"
-          href="/apple-touch-icon-114x114.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="144x144"
-          href="/apple-touch-icon-144x144.png"
-        />
-
         <Meta />
         <Links />
       </head>
       <body>
-        {children}
+        <ThemeProvider theme="dark">
+          <KotlinHeader
+            dropdownTheme="dark"
+            productWebUrl={releases_data.latest.url}
+            hasSearch={false}
+            searchConfig={{}}
+          />
+          {children}
+          <KotlinFooter />
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -61,20 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (
-    <ThemeProvider theme="dark">
-      <KotlinHeader
-        dropdownTheme="dark"
-        productWebUrl={releases_data.latest.url}
-        hasSearch={false}
-        searchConfig={{}}
-      />
-
-      <Outlet />
-
-      <KotlinFooter />
-    </ThemeProvider>
-  );
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

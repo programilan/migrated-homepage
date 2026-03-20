@@ -1,87 +1,92 @@
-# Welcome to React Router!
+# Kotlin website
 
-A modern, production-ready template for building full-stack React applications using React Router.
+This is a simplified version of https://kotlinlang.org, migrated to React Router 7 Framework Mode, created for the JetSites 2026 internship test assignment.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Implementation Summary
 
-## Features
+The project was rebuilt from scratch using React Router with SSR support via Vite. The page migration was generally smooth, with most issues coming from sections that relied on browser-only APIs such as window, DOM, and localStorage. These were resolved using useEffect or with minor code adjustments to ensure SSR compatibility.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+The main challenge was integrating kotlin-ui header/footer and rescui components. This required configuration changes to prevent dependency externalization and ensuring that no browser-only or deprecated APIs were used during server rendering of these components.
 
-## Getting Started
+The original functionality and visual appearance were preserved, while updating the project to use the latest rescui and kotlin-ui components.
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
+## How to Run
 
 ### Development
 
 Start the development server with HMR:
 
 ```bash
+npm install
+
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Application will be available at `http://localhost:5173`.
 
-## Building for Production
+### Local Deployment
 
 Create a production build:
 
 ```bash
+npm install
+
 npm run build
+
+# Run the build
+npm start
 ```
 
-## Deployment
+Application will be available at `http://localhost:3000`.
 
 ### Docker Deployment
 
 To build and run using Docker:
 
 ```bash
-docker build -t my-app .
+docker build -t migrated-homepage .
 
 # Run the container
-docker run -p 3000:3000 my-app
+docker run -p 3000:3000 migrated-homepage
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+Application will be available at `http://localhost:3000`.
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+migrated_homepage/
+├───assets/
+├───public/
+├───root.tsx
+├───routes.ts          # route declarations in Framework Mode
+├───vite.config.ts
+└───app/
+    ├───components/    # holds all reusable components
+    │   └───layout/    # sub-group of related components
+    ├───css/           # holds css styles
+    │   ├───config/    # sub-group of related styles
+    │   ├───fonts/
+    │   └───util/
+    ├───data/          # holds all reusable data files
+    ├───hooks/         # holds all hooks
+    │   └───ssr-safe/  # holds ssr-safe overrides of hooks
+    ├───types/         # type declarations
+    ├───sections/      # reusable sections between multiple pages
+    └───routes/            # holds all routes/pages
+        └───home/
+            ├───index.tsx  # page component
+            ├───index.scss # page styles
+            └───sections/  # sections for this page only
+                ├───header/
+                │   ├───data.ts    # section data
+                │   ├───index.tsx  # section component
+                │   └───index.scss # section styles
+                ├───latest-from-kotlin/
+                ├───start/
+                ├───usage/
+                └───why-kotlin/
+                    └───section/   # each section can hold sub-sections...
+                        └───programming-language/
+
 ```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
